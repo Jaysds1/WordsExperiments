@@ -1,0 +1,11 @@
+CACHE MANIFEST
+# 2016-01-25:v1
+/
+/index.php
+/scripts/main.js
+/images/we_logo.png
+/css/main.css
+/css/mobile.css
+
+NETWORK:
+*
