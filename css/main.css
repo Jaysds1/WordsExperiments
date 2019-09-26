@@ -49,13 +49,6 @@ textarea {
     resize: vertical;
 }
 
-aside {
-    margin-top: 50px;
-    float: right;
-    width: 30%;
-    height: 100%;
-}
-
 nav {
     text-align: right;
 }
@@ -71,10 +64,6 @@ footer {
     text-align: center;
 }
 
-img[alt$="Page"] {
-    width: 3%;
-    height: auto;
-}
 a:link,a:visited {
     color: white;
     text-decoration: none;

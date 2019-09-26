@@ -17,7 +17,7 @@ window.onload = (function () {
                 ex = ex[i].value;
                 break;
             }
-        if (typeof ex === "object" || exs === "")
+        if (typeof ex === "object" || exs === "") //incase of any strange error
             return;
 
         //Check which selected input was selected
@@ -32,18 +32,21 @@ window.onload = (function () {
                     newExs.push(exs[i].piglatin());
                 break;
             case "vowels":
-                var vowels = [
+                var vowels = [ //A vowel table, counter, and total counter
                     ['a', 'e', 'i', 'o', 'u'],
                     [0, 0, 0, 0, 0],
                     0
                 ];
-                for (var i = 0; i < exs.length; i++)
-                    for (var v = 0; v < exs[i].length; v++)
-                        for (var iv = 0; iv < vowels[0].length; iv++)
+                for (var i = 0; i < exs.length; i++) //Words Loop
+                    for (var v = 0; v < exs[i].length; v++)//Letters Loop
+                        for (var iv = 0; iv < vowels[0].length; iv++)//Vowel Loop
                             if (vowels[0][iv] === exs[i][v].toLowerCase()) {
+                                //After vowel check add to the counters
                                 vowels[1][iv]++;
                                 vowels[2]++;
                             }
+                
+                //Display Result
                 newExs[0] = "Vowels found: " + vowels[2];
                 newExs[1] = "\na's: " + vowels[1][0];
                 newExs[1] += "\ne's: " + vowels[1][1];
@@ -53,9 +56,9 @@ window.onload = (function () {
                 break;
             case "palindrome":
                 for (var i = 0; i < exs.length; i++) {
-                    var reverse = exs[i].reverse(),
+                    var reverse = exs[i].reverse(), //Reverse Word
                             msg = "No";
-                    if (reverse === exs[i])
+                    if (reverse === exs[i]) //Is the word spelt the same?
                         msg = "Yes";
                     newExs.push(exs[i] + " - " + reverse + "\t" + msg + "\n");
                 }
@@ -100,7 +103,7 @@ window.onload = (function () {
                         newExs.push("\n" + letter + ":\t" + letters[1][letter]);
                 break;
             default:
-                newExs[0] = "Select experiment type!";
+                newExs[0] = "Select a type of experiment to perform!";
         }
 
         //Output new experiment outcome

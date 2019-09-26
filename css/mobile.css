@@ -8,18 +8,7 @@ article {
     padding: 5px;
 }
 
-aside {
-    margin: 10px;
-    float: none;
-    width: 70%;
-    height: auto;
-}
-
 footer{
     clear: none;
     padding: 10px;
-}
-
-img[alt$="Page"] {
-    width: 10%;
 }
